@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+
+  local:
+    container_name: local-mysql
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: frank
+    ports:
+      - 3306:3306
+    volumes:
+      - './local-data:/var/lib/mysql'
