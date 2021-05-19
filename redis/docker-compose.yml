@@ -1,9 +1,9 @@
-version: '3'
+version: '3.7'
 
 services:
-  local-redis:
-    container_name: local-redis
-    image: 'docker.io/bitnami/redis:6.2-debian-10'
+  redis:
+    container_name: redis
+    image: docker.io/bitnami/redis:6.2-debian-10
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
@@ -11,4 +11,8 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - './local-data:/bitnami/redis/data'
+      - './data:/bitnami/redis/data'
+
+volumes:
+  data:
+    driver: local

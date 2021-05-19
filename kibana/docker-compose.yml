@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.12.1
+    restart: always
+    environment:
+      - ELASTICSEARCH_HOST=http://localhost:9200
+    ports:
+      - 5601:5601
