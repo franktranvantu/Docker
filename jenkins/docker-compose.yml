@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   jenkins:
@@ -10,4 +10,4 @@ services:
       - 8080:8080
       - 50000:50000
     volumes:
-      - ./jenkins:/var/jenkins_home
+      - ./data:/var/jenkins_home
