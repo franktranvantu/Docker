@@ -1,47 +1,12 @@
-version: '3'
+version: '3.8'
 
 services:
   postgres:
-    container_name: 'postgres'
-    image: 'postgres'
-    environment:
-      POSTGRES_PASSWORD: 'frank'
-    volumes:
-      - './local-data:/var/lib/postgresql/data'
-    ports:
-      - 5432:5432
-
-  hlc-aftersale:
-    image: 'postgres'
-    container_name: 'hlc-aftersale'
-    environment:
-      POSTGRES_USER: hlc
-      POSTGRES_PASSWORD: hlc
-      POSTGRES_DB: aftersale
-    volumes:
-      - './hlc-aftersale-data:/var/lib/postgresql/data'
-    ports:
-      - 5432:5432
-
-  hlc-microx:
-    image: 'postgres'
-    container_name: 'hlc-microx'
-    environment:
-      POSTGRES_USER: mxoo
-      POSTGRES_PASSWORD: mxoo
-      POSTGRES_DB: oauth2server
-    volumes:
-      - './hlc-microx-data:/var/lib/postgresql/data'
-    ports:
-      - 5432:5432
-
-  nestjs:
-    image: 'postgres'
-    container_name: 'nestjs'
+    container_name: postgres
+    image: postgres
     environment:
       POSTGRES_PASSWORD: frank
-      POSTGRES_DB: nestjs
     volumes:
-      - './nestjs-data:/var/lib/postgresql/data'
+      - ./local-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
