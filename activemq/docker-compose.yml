@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  activemq:
+    container_name: activemq
+    image: rmohr/activemq:latest
+    ports:
+      - "8161:8161"   # Web console
+      - "61616:61616" # OpenWire port
+      - "5672:5672"   # AMQP port
+      - "61613:61613" # STOMP port
+    volumes:
+      - ./data:/data/activemq # Persistent data storage
