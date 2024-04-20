@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   jenkins:
@@ -9,5 +9,8 @@ services:
     ports:
       - "80:8080"
       - "50000:50000"
+    environment:
+      JAVA_OPTS: "-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true"
     volumes:
       - ./data:/var/jenkins_home
+      - /Users/tvtran/Desktop/print:/mnt

@@ -24,3 +24,9 @@ services:
 volumes:
   data:
     driver: local
+
+# Login info
+# System: MySQL
+# Server: mysql
+# Username: root
+# Password: root
